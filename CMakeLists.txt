@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(SDLApp)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${SDLApp_SOURCE_DIR}/cmake")
+find_package(SDL2 REQUIRED)
+include_directories(SDLApp ${SDL2_INCLUDE_DIR})
+aux_source_directory(src SRC_DIR)
+add_executable(SDLApp ${SRC_DIR})
+target_link_libraries(SDLApp ${SDL2_LIBRARY})
